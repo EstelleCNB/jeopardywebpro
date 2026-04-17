@@ -4,6 +4,7 @@
 
 require_once 'session_guard.php';
 require_once __DIR__ . '/questions.php';
+require_once __DIR__ . '/score_store.php';
 
 if (!isset($_SESSION['scores'])) {
     header('Location: lobby.php');
@@ -48,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['scores'][$currentPlayer] -= $points;
         $feedback = "❌ Wrong! -\$$points. Correct: \"What is {$clue['question']}?\"";
     }
+
+    sync_scores_to_file(__DIR__ . '/scores.txt', $_SESSION['scores']);
 
     // Mark clue as answered and flip turn
     $_SESSION['answered'][] = $id;

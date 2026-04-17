@@ -3,6 +3,7 @@
 // Sprint 3/4: Add second-player login flow, game initialization
 
 require_once 'session_guard.php';
+require_once __DIR__ . '/score_store.php';
 
 // Initialize game session variables when a new game is started
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start_game'])) {
@@ -18,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start_game'])) {
         $_SESSION['current_player']  = $_SESSION['user']; // player 1 goes first
         $_SESSION['answered']        = [];                // tracks answered clue IDs
         $_SESSION['daily_double']    = rand(1, 20);       // random clue is daily double
+
+        sync_scores_to_file(__DIR__ . '/scores.txt', $_SESSION['scores']);
 
         header('Location: jep.php');
         exit();
