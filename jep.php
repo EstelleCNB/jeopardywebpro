@@ -3,7 +3,7 @@
 // Sprint 4: Board pulls live from questions.php, answered cells marked
 
 require_once 'session_guard.php';
-require_once 'questions.php'; // loads $categories and $clues
+require_once __DIR__ . '/questions.php'; // loads $categories and $clues
 
 // Guard: must have an active game
 if (!isset($_SESSION['scores'])) {

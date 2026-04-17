@@ -3,7 +3,7 @@
 // Sprint 4: Add similar_text() matching, daily double wager
 
 require_once 'session_guard.php';
-require_once 'questions.php';
+require_once __DIR__ . '/questions.php';
 
 if (!isset($_SESSION['scores'])) {
     header('Location: lobby.php');
@@ -14,13 +14,13 @@ $id = intval($_GET['id'] ?? 0);
 
 // Validate clue ID
 if (!isset($clues[$id])) {
-    header('Location: game.php');
+    header('Location: jep.php');
     exit();
 }
 
 // Prevent re-answering
 if (in_array($id, $_SESSION['answered'] ?? [])) {
-    header('Location: game.php');
+    header('Location: jep.php');
     exit();
 }
 
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php else: ?>
         <!-- Feedback after submission -->
         <p class="feedback <?= $correct ? 'correct' : 'wrong' ?>"><?= $feedback ?></p>
-        <a href="game.php" class="btn-primary">Back to Board</a>
+        <a href="jep.php" class="btn-primary">Back to Board</a>
         <?php endif; ?>
     </main>
 
