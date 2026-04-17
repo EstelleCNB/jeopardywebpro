@@ -158,7 +158,9 @@ input[type='password']:focus {
 
 .lobby-page,
 .game-page,
-.clue-page {
+.clue-page,
+.leaderboard-page,
+.result-page {
     min-height: 100vh;
     margin: 0;
     background:
@@ -207,6 +209,100 @@ input[type='password']:focus {
     border-radius: 20px;
     box-shadow: 0 16px 36px rgba(7, 32, 58, 0.24);
     padding: 26px;
+}
+
+.leaderboard-wrap {
+    width: min(860px, calc(100% - 24px));
+    margin: 22px auto;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 20px;
+    box-shadow: 0 16px 36px rgba(7, 32, 58, 0.24);
+    padding: 26px;
+}
+
+.result-wrap {
+    width: min(860px, calc(100% - 24px));
+    margin: 22px auto;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 20px;
+    box-shadow: 0 16px 36px rgba(7, 32, 58, 0.24);
+    padding: 26px;
+    text-align: center;
+}
+
+.leaderboard-wrap h2 {
+    margin: 0 0 18px;
+    color: #11365a;
+}
+
+.result-wrap h2 {
+    margin: 0 0 8px;
+    color: #11365a;
+}
+
+.result-kicker {
+    margin: 0 0 8px;
+    color: #1c5e9c;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.result-summary {
+    margin: 0 0 20px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    margin-bottom: 18px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+.leaderboard-table thead {
+    background: #edf5fd;
+}
+
+.leaderboard-table th {
+    color: #123a60;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.leaderboard-table tbody tr + tr td {
+    border-top: 1px solid #e2edf7;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+    background: #f8fbff;
+}
+
+.leaderboard-table td:first-child {
+    width: 90px;
+    font-weight: 800;
+    color: #1c5e9c;
 }
 
 .lobby-card h2 {
@@ -377,13 +473,17 @@ input[type='password']:focus {
 
     .lobby-card,
     .clue-card,
+    .leaderboard-wrap,
+    .result-wrap,
     .turn-notice,
     .board-wrap {
         width: calc(100% - 16px);
     }
 
     .lobby-card,
-    .clue-card {
+    .clue-card,
+    .leaderboard-wrap,
+    .result-wrap {
         padding: 20px 14px;
     }
 }
