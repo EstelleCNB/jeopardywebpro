@@ -16,7 +16,7 @@ $answered      = $_SESSION['answered'] ?? [];
 
 // Check if all 20 clues are done → go to result
 if (count($answered) >= 20) {
-    header('Location: reslt.php');
+    header('Location: result.php'); // FIX 4: was 'reslt.php'
     exit();
 }
 
@@ -26,6 +26,7 @@ foreach ($clues as $id => $clue) {
     $board[$clue['category']][$clue['value']] = $id;
 }
 $dollarValues = [200, 400, 600, 800];
+?> <!-- FIX 1: close PHP block before HTML -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,17 +50,17 @@ $dollarValues = [200, 400, 600, 800];
     </header>
 
     <p class="turn-notice">
-        It's <strong><?= htmlspecialchars($currentPlayer) ?>'s</strong> turn.
+        It's <strong><?= htmlspecialchars($currentPlayer) ?></strong>'s turn.
     </p>
 
     <main class="board-wrap">
         <table class="jeopardy-board">
             <thead>
-                <t>
-                    <?php foreach ($categories as $cat: ?>
+                <tr> <!-- FIX 2: was <t> -->
+                    <?php foreach ($categories as $cat): ?> <!-- FIX 3: was ($categories as $cat: -->
                         <th><?= htmlspecialchars($cat) ?></th>
                     <?php endforeach; ?>
-                </t>
+                </tr> <!-- FIX 2: was </t> -->
             </thead>
             <tbody>
                 <?php foreach ($dollarValues as $val): ?>
