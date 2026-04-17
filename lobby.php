@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start_game'])) {
         $_SESSION['answered']        = [];                // tracks answered clue IDs
         $_SESSION['daily_double']    = rand(1, 20);       // random clue is daily double
 
-        header('Location: game.php');
+        header('Location: jep.php');
         exit();
     }
 }
