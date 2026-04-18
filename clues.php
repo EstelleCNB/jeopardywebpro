@@ -44,10 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($correct) {
         $_SESSION['scores'][$currentPlayer] += $points;
-        $feedback = "✅ Correct! +\$$points";
+        $feedback = "Correct! +\$$points";
     } else {
         $_SESSION['scores'][$currentPlayer] -= $points;
-        $feedback = "❌ Wrong! -\$$points. Correct: \"What is {$clue['question']}?\"";
+        $feedback = "Wrong! -\$$points. Correct: \"What is {$clue['question']}?\"";
     }
 
     sync_scores_to_file(__DIR__ . '/scores.txt', $_SESSION['scores']);

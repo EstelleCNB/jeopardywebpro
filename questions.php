@@ -49,19 +49,19 @@ $clues = [
         'category' => 'History',
         'value' => 600,
         'answer' => 'This wall fell in 1989, marking the end of the Cold War era.',
-        'question' => 'berlin wall',
+        'question' => 'the berlin wall',
     ],
     8 => [
         'category' => 'History',
         'value' => 800,
         'answer' => 'The ship that sank on its maiden voyage in 1912.',
-        'question' => 'titanic',
+        'question' => 'the titanic',
     ],
     9 => [
         'category' => 'Geography',
         'value' => 200,
         'answer' => 'This is the largest ocean on Earth.',
-        'question' => 'pacific ocean',
+        'question' => 'the pacific ocean',
     ],
     10 => [
         'category' => 'Geography',
@@ -73,13 +73,13 @@ $clues = [
         'category' => 'Geography',
         'value' => 600,
         'answer' => 'Mount Everest lies in this mountain range.',
-        'question' => 'himalayas',
+        'question' => 'the himalayas',
     ],
     12 => [
         'category' => 'Geography',
         'value' => 800,
         'answer' => 'This river runs through Egypt and empties into the Mediterranean Sea.',
-        'question' => 'nile',
+        'question' => 'the nile',
     ],
     13 => [
         'category' => 'Literature',
